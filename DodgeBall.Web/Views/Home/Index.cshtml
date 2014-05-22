@@ -1,0 +1,14 @@
+﻿@model List<DodgeBall.DataModels.Team>
+
+<h1>Welcome to the League!</h1>
+<h2>If you can click a mouse, you dodge a ball!</h2>
+
+@foreach (var team in Model)
+{
+    <div class="jumbotron">
+        <h1>@team.Name</h1>
+        <a href="Home/Team/@team.Id"><img src="@team.Logo" alt="@team.Logo"/></a>
+    </div>
+}
+<a href="Home/NewTeam" class="btn btn-danger">Sign Up a Team!</a>
+<a href="Home/NewPlayer" class="btn btn-success">Join a Team!</a>

@@ -1,0 +1,22 @@
+﻿@model DodgeBall.Web.Models.AddEditVM
+
+@{
+    ViewBag.Title = "Model.Title";
+}
+
+<h2>Please Enter your Team's Information below!</h2>
+<form method="post">
+    @Html.HiddenFor(x => x.Team.Id)
+    @Html.EditorFor(x => x.Team.Name)
+    @*<input type="text" name="Name" placeholder="Enter your team's name'" />*@
+    @Html.EditorFor(x => x.Team.Logo)
+    @*<input type="text" name="Logo" placeholder="Please Enter your team Logo!" />*@
+    <input class="btn btn-success" type="submit" value="@Model.ButtonMessage" />
+</form>
+@if (Model.ButtonMessage == "Submit Changes")
+{
+    <form method="post" action="/Home/DeleteTeam/@Model.Team.Id">
+        <input class="btn btn-danger" type="submit" value="Delete"/>
+    </form> 
+}
+

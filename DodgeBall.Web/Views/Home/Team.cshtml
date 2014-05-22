@@ -1,0 +1,15 @@
+﻿@model DodgeBall.DataModels.Team
+
+@{
+    ViewBag.Title = "Model.Name";
+}
+<div class="jumbotron">
+    <h2>@Model.Name</h2>
+    <img src="@Model.Logo"/>
+</div>
+@foreach (var player in Model.Players)
+{
+    <h2>@player.Name</h2>
+    @*<img src="@player.Picture" /> </ br> THIS ISN'T WORKING SO I COMMENTED IT OUT*@
+}
+<a href="/Home/EditTeam/@Model.Id" class="btn btn-warning">Edit @Model.Name</a>
